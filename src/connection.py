@@ -81,6 +81,8 @@ class Connection(protocol.Protocol):
         Ritorna un codice identificato del browser che il client sta utilizzando.
         Utile quando bisogna creare del codice xhtml ad uopo per un browser.
         """
+	self.request.received_headers = self.request.requestHeaders.getAllRawHeaders()
+
         if (not self.request or not self.request.received_headers
         or not "user-agent" in self.request.received_headers):
             return ""

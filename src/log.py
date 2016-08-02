@@ -13,7 +13,7 @@ import os
 import sys
 import traceback
 
-import Image  # PIL
+from PIL import Image  # PIL
 from twisted._version import version as twisted_version
 numpy_version = None
 try:
