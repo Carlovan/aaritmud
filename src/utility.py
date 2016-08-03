@@ -13,7 +13,6 @@ import datetime
 import HTMLParser
 import locale
 import math
-import numpy
 import random
 import re
 import os
@@ -525,9 +524,6 @@ def copy_existing_attributes(from_obj, to_obj, except_these_attrs=None, avoid_vo
             continue
         if attr_name not in to_obj.__dict__:
             continue
-
-        if type(attr) == numpy.int32:
-            attr = int(attr)
 
         if attr_name in to_obj.REFERENCES:
             if attr.__class__.__name__ == "dict":

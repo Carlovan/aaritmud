@@ -47,8 +47,8 @@ else:
     print "Verranno utilizzate alcune funzioni random della libreria numpy,"
     print "piu' performanti, al posto di quelle standard\n"
     import random
-    random.randint   = numpy_random.random_integers
-    random.randrange = numpy_random.randint
+    random.randint   = lambda low, high=None, size=None: int(numpy_random.random_integers(low, high, size))
+    random.randrange = lambda low, high=None, size=None: int(numpy_random.randint(low, high, size))
 
 
 #= CLASSI ======================================================================

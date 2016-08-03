@@ -12,7 +12,6 @@ persistence/, questi vengono caricati dal metodo db.load(), ogni singolo file
 #= IMPORT ======================================================================
 
 import datetime
-import numpy
 import os
 import sys
 import tarfile
@@ -1803,9 +1802,6 @@ def fwrite(file, data, data_label="", indentation=""):
     for attr_name in data_attributes:
         label = "%-14s" % ("%s: " % to_capitalized_words(attr_name))
         attr = getattr(data, attr_name)
-
-        if type(attr) == numpy.int32:
-            attr = int(attr)
 
         if attr_name in data.REFERENCES or attr_name in data.WEAKREFS:
             if attr and attr_name in data.WEAKREFS:
