@@ -265,8 +265,8 @@ class WebResource(resource.Resource):
         else:
             account_block.append('''<br class="demi"><form id="login" method="POST" onsubmit="return false;" action="">''')
             account_block.append('''<table>''')
-            account_block.append('''<tr><td align="left">Nome</td><td><input type="text" id="name" class="account_block_input" onkeypress="checkEnter();" /><td>''')
-            account_block.append('''<tr><td align="left">Password</td><td><input type="password" id="password" class="account_block_input" onkeypress="checkEnter();" /><td>''')
+            account_block.append('''<tr><td align="left">Nome</td><td><input type="text" id="name" class="account_block_input"" /><td>''')
+            account_block.append('''<tr><td align="left">Password</td><td><input type="password" id="password" class="account_block_input" /><td>''')
             account_block.append('''</table>''')
             account_block.append('''<input type="submit" id="login" value="Collegati" onclick="fastLogin();" />''')
             account_block.append('''</form>''')
