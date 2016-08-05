@@ -64,6 +64,8 @@ class CompatibilityPage(WebResource):
             log.bug("Impossibile aprire il file %s in append: %r" % compatibility_path)
             return "Errore nell'apertura del database dei messaggi"
 
+        request.received_headers = request.requestHeaders.getAllRawHeaders()  # For back compatibility
+
         feedback = "%s\%s\n%s\n%s\n\n" % (datetime.datetime.now(), conn.account.name, request.received_headers["user-agent"], msg)
         compatibility_file.write(feedback)
         compatibility_file.close()

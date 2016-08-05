@@ -63,6 +63,8 @@ class LoginPage(WebResource):
         # Se invece è tutto a posto procede con la pagina di account
         conn.account = database["accounts"][name]
 
+        request.received_headers = request.requestHeaders.getAllRawHeaders()  # For back compatibility
+
         # Aggiunge l'user agent utilizzato nella connessione
         if request.received_headers and "user-agent" in request.received_headers:
             user_agent = request.received_headers["user-agent"]

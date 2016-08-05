@@ -416,6 +416,8 @@ class Log(object):
             log.bug("request non è una parametro valido")
             return
 
+        request.received_headers = request.requestHeaders.getAllRawHeaders()  # For back compatibility
+
         # -------------------------------------------------------------------------
 
         if (not request or not request.received_headers

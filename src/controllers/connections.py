@@ -43,6 +43,8 @@ class ConnectionsPage(WebResource):
         rows = []
 
         for conn in connections.itervalues():
+            conn.request.received_headers = conn.request.requestHeaders.getAllRawHeaders()  # For back compatibility
+
             rows.append('''<tr>''')
 
             rows.append('''<td>%s</td>''' % conn.get_id(conn))
